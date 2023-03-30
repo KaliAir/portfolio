@@ -26,10 +26,10 @@ const Resume = ({viewportWidth})=>{
 	return (
 			<AnimatePresence>
 			<motion.div className="resume-main"
-			initial={{opacity:0}}
-			animate={{opacity:1,transition:{duration:1.3}}}
-			exit={{opacity:0}}
-			>
+				initial={{opacity:0}}
+				animate={{opacity:1,transition:{duration:1.3}}}
+				exit={{opacity:0}}
+				>
 				<motion.div style={{
 					opacity: bgOpacity ,
 					scale: bgScale,
@@ -37,13 +37,13 @@ const Resume = ({viewportWidth})=>{
 				    }} 
 					ref={targetRef}
 					className="resume-container"
-				>
-				<img src={Images.ss} alt=""/>
+				   >
+					<img src={Images.ss} alt=""/>
 				</motion.div>
 
 				<div className="image-background">
-					<motion.img style={{scale:viewportWidth >= 480 ? imageScale: "", y:viewportWidth >= 480 ? imageY:""}} className="resume-image" src={Images.resume} alt=""/>
-					<motion.div style={{y:viewportWidth >=480 ? iconY: ""}}  className="programming-icons"
+					<motion.img style={{scale:viewportWidth >= 550 ? imageScale: "", y:viewportWidth >= 550 ? imageY:""}} className="resume-image" src={Images.resume} alt=""/>
+					<motion.div style={{y:viewportWidth >=550 ? iconY: ""}}  className="programming-icons"
 					// animate={{
 					// 	y:viewportWidth >=480 ? [-500,-200]:"",
 					// 	rotate:viewportWidth >=480 ? 360:0,

@@ -226,18 +226,6 @@
   background: seagreen;
 }
 
-.resume-container{
-  font-size: 2rem;
-  letter-spacing: .4rem;
-  padding-top: 20%;
-}
-
-.resume-container img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .resume-image{
   width: 100%;
   height: 100%;
@@ -246,25 +234,6 @@
   overflow-x: hidden;
 }
 
-.image-background{
-  background: grey;
-  width: 100%;
-  height: 100%;
-}
-
-.image-background img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.programming-icons{
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(7, 7rem);
-  font-size: 5rem;
-  color: white;
-}
 
 @media screen and (max-width: 1330px) {
   .main-container{
@@ -337,6 +306,52 @@
     }
 }
 
+/*---------------------------------RESUME----------------------------------*/
+
+/*------------------------Image and CV Container---------*/
+
+.resume-main{
+
+}
+
+
+/*------------------------CODES IMAGE----------*/
+.resume-container{
+  font-size: 2rem;
+  letter-spacing: .4rem;
+  padding-top: 20%;
+}
+/*------------CHILD----------*/
+.resume-container img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*--------------------------CV CONTAINER-------*/
+.image-background{
+  background: grey;
+  width: 100%;
+  height: 100%;
+}
+/*----------CHILD------------*/
+.image-background img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.programming-icons{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(7, 7rem);
+  font-size: 5rem;
+  color: white;
+}
+
+/*---------------------------------RESUME END------------------------*/
+
+
 @media screen and (max-width: 550px) {
   .profile-container{
       font-family: 'Montserrat', sans-serif;
@@ -400,19 +415,10 @@
       color: white;
     }
 
-    .resume-main{
-      overflow-x: hidden;
-    }
-
     .resume-container{
       display: none;
     }
 
-    .image-background{
-      display: grid;
-      max-width: 400px;
-      align-content: center;
-    }
 
     .programming-icons{
     display: grid;
@@ -430,6 +436,8 @@
   transform: scale(1.4);
   transition: transform 0.3s ease-in-out;
 }
+
+
 
 
 
