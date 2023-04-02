@@ -37,6 +37,7 @@ const Profile = ({targetRef})=>{
 	return (
 			<div className="main-container">
 				<div className="left"></div>
+				
 				<div  className="main-profile" onClick={()=> setCover(true)}>
 
 					<motion.div className="cover"
@@ -77,7 +78,7 @@ const Profile = ({targetRef})=>{
 								<div><BsPersonWorkspace/></div>
 								<span>Work</span>
 							</Link>
-							<Link className="menu-items">
+							<Link to="/contact" className="menu-items">
 								<div><BsFillPhoneFill/></div>
 								<span>Contact</span>
 							</Link>
@@ -96,6 +97,7 @@ const Profile = ({targetRef})=>{
 						<DownloadCV/>
 					</div>
 				</div>
+
 				<div className="right"></div>
 			</div>	
 		)

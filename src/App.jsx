@@ -6,6 +6,7 @@ import {useTransform, useScroll} from 'framer-motion'
 import Home from './components/Home'
 import Resume from './components/Resume'
 import {useState, useEffect} from 'react'
+import Contact from './components/Contact'
 
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
           viewportWidth={viewportWidth}
           />}/>
           <Route path='resume' element={<Resume viewportWidth={viewportWidth}/>}/>
+          <Route path='contact' element={<Contact/>}/>
         </Route>
 
       )
