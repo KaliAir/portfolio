@@ -8,7 +8,7 @@ import {AiOutlineDingtalk} from 'react-icons/ai';
 import {IoIosPaper} from 'react-icons/io';
 import {BsPersonWorkspace} from 'react-icons/bs';
 import {BsFillPhoneFill} from 'react-icons/bs'
-import {motion} from 'framer-motion';
+import {motion, useAnimation} from 'framer-motion';
 import DownloadCV from './DownloadCV';
 import {Outlet,Link} from 'react-router-dom'
 
@@ -31,6 +31,22 @@ const portfolioVariant = {
 const Profile = ({targetRef})=>{
 
 	const [cover, setCover] = useState(false)
+
+	const skill = useAnimation();
+	const cv = useAnimation();
+	const contact = useAnimation();
+
+	const handleSkill = ()=>{
+		skill.start({x:[0,45,-45,45,0],y:[0,-30,-50,30,0],transition:{duration:.7}})
+	}
+
+	const handleCV = ()=>{
+		cv.start({y:[0,-20,-30,22,0],rotateX:[0,45,-45,45,0],transition:{duration:1}})
+	}
+
+	const handleContact = ()=>{
+		contact.start({rotate:[0,-45,45,-45,45,0],transition:{duration:.6}})
+	}
 	
 
 
@@ -66,20 +82,20 @@ const Profile = ({targetRef})=>{
 						<p className="role">Full Stack Web Developer</p>
 
 						<div className="menu-container">
-							<Link to="/home" className="menu-items">
-								<div><AiOutlineDingtalk/></div>
+							<Link to="/home" className="menu-items" onClick={()=> handleSkill()}>
+								<motion.div animate={skill}><AiOutlineDingtalk/></motion.div>
 								<span>Skill</span>
 							</Link>
-							<Link to="/resume" className="menu-items">
-								<div><IoIosPaper/></div>
+							<Link to="/resume" className="menu-items" onClick={()=> handleCV()}>
+								<motion.div animate={cv}><IoIosPaper/></motion.div>
 								<span>C V</span>
 							</Link>
 							<Link className="menu-items">
 								<div><BsPersonWorkspace/></div>
 								<span>Work</span>
 							</Link>
-							<Link to="/contact" className="menu-items">
-								<div><BsFillPhoneFill/></div>
+							<Link to="/contact" className="menu-items" onClick={()=> handleContact()}>
+								<motion.div animate={contact}><BsFillPhoneFill/></motion.div>
 								<span>Contact</span>
 							</Link>
 						</div>
