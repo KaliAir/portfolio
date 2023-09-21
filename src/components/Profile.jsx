@@ -31,13 +31,13 @@ const portfolioVariant = {
 const Profile = ({targetRef})=>{
 
 	const [cover, setCover] = useState(false)
+	const [skillRotate,setSkillRotate] = useState(false)
 
-	const skill = useAnimation();
 	const cv = useAnimation();
 	const contact = useAnimation();
 
 	const handleSkill = ()=>{
-		skill.start({rotate:360,transition:{duration:.7}})
+		setSkillRotate(!skillRotate)
 	}
 
 	const handleCV = ()=>{
@@ -83,7 +83,7 @@ const Profile = ({targetRef})=>{
 
 						<div className="menu-container">
 							<Link to="/home" className="menu-items" onClick={()=> handleSkill()}>
-								<motion.div animate={skill}><AiOutlineDingtalk/></motion.div>
+								<motion.div animate={skillRotate?{rotate:360,transition:{duration:0.4}}:{rotate:-360,transition:{duration:0.4}}}><AiOutlineDingtalk/></motion.div>
 								<span>Skill</span>
 							</Link>
 							<Link to="/resume" className="menu-items" onClick={()=> handleCV()}>
@@ -92,7 +92,7 @@ const Profile = ({targetRef})=>{
 							</Link>
 							<Link className="menu-items">
 								<div><BsPersonWorkspace/></div>
-								<span>Work</span>
+								<span>Work (X)</span>
 							</Link>
 							<Link to="/contact" className="menu-items" onClick={()=> handleContact()}>
 								<motion.div animate={contact}><BsFillPhoneFill/></motion.div>
