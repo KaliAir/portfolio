@@ -37,7 +37,7 @@ const Profile = ({targetRef})=>{
 	const contact = useAnimation();
 
 	const handleSkill = ()=>{
-		skill.start({x:[0,45,-45,45,0],y:[0,-30,-50,30,0],transition:{duration:.7}})
+		skill.start({rotate:360,transition:{duration:.7}})
 	}
 
 	const handleCV = ()=>{
